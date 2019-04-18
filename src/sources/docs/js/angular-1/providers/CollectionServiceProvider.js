@@ -33,7 +33,7 @@ let CollectionObject = function(collection) {
 
         if (Array.isArray(this.collection.variable)) {
             this.collection.variable.forEach(variable => {
-                variables = variable.value;
+                variables[variable.key] = variable.value;
             });
         }
 

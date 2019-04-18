@@ -18,6 +18,7 @@ let BaseController = function(
         }
 
         if ($scope.collection != null) {
+            console.log($scope.collection);
             $rootScope.variables = $scope.collection.variables();
             $scope.endpoints = $scope.collection.endpointsMap();
 
