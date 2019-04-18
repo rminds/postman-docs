@@ -1,0 +1,26 @@
+//- babel polyfill
+if (qdt_c.platform.libs.babel_polyfill)
+    script(src="assets/dist/babel-polyfill/polyfill.min.js")
+
+//- jquery
+if (qdt_c.platform.libs.jquery)
+    script(src="assets/dist/jquery/jquery.min.js")
+
+//- underscore
+if (qdt_c.platform.libs.underscore)
+    script(src="assets/dist/underscore/underscore-min.js")
+
+//- underscore.string
+if (qdt_c.platform.libs['underscore.string'])
+    script(src="assets/dist/underscore.string/underscore.string.min.js")
+
+//- bootstrap 3
+if (qdt_c.platform.libs.bootstrap_3)
+    script(src="assets/dist/bootstrap/js/bootstrap.min.js")
+
+//- angular
+if (qdt_c.platform.libs.angular)
+    script(src="assets/dist/angular/angular.min.js")
+
+//- custom script
+script(src="assets/js/app.js")

@@ -1,0 +1,30 @@
+div
+    p 
+        | Response code: 
+        strong {{ response.code }} {{ response.status }}
+
+    div(
+        ng-bind="response.originalRequest.url.raw"
+        ).endpoint-url
+
+    // Headers
+    div(ng-if="response.originalRequest.header.length > 0").endpoint-table
+        .endpoint-request-title Headers
+        table-data(rows="response.originalRequest.header")
+    
+    // Query
+    div(ng-if="response.originalRequest.url.query.length > 0").endpoint-table
+        .endpoint-request-title Query
+        table-data(rows="response.originalRequest.url.query")
+
+    // Request body
+    div(ng-if="response.originalRequest.body.mode").endpoint-table
+        .endpoint-request-title Body - {{ response.originalRequest.body.mode }}
+        div(ng-if="response.originalRequest.body.mode == 'raw'" code-dir data="response.originalRequest.body.raw")
+        div(ng-if="response.originalRequest.body.mode == 'formdata' || response.originalRequest.body.mode == 'urlencoded'")
+            table-data(rows="response.originalRequest.body[response.originalRequest.body.mode]")
+    
+    // response
+    div(ng-if="response.body").endpoint-block
+        .endpoint-request-title Response
+        div(code-dir data="response.body")

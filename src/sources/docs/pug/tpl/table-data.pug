@@ -1,0 +1,14 @@
+table.table
+    tr
+        th(style="width: 30%") KEY
+        th(style="width: 30%") VALUE
+        th(style="width: 40%") DESCRIPTION
+        // th TYPE
+    tr(ng-repeat="row in rows")
+        td(ng-bind="row.key")
+        td
+            span(ng-bind="row.value").text-highlight.text-strong.text-mono
+        td(
+            ng-bind="row.description ? row.description : 'None'" 
+            ng-class="row.description ? '' : 'text-muted'")
+        // td(ng-bind="row.type")

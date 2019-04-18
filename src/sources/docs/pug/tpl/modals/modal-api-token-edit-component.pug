@@ -1,0 +1,15 @@
+.modal
+    .modal-backdrop(ng-click="$ctrl.close()")
+    .modal-window: form.form(ng-submit="$ctrl.form.submit()")
+        .modal-close.mdi.mdi-close(ng-click="$ctrl.close()")
+        .modal-header(ng-bind="$ctrl.modal.scope.entity.id ? 'Edit booking accommodation' : 'Add booking accommodation'")
+        .modal-body
+            .modal-section.modal-section-light: .row: .col.col-10.col-xs-12
+                .row
+                    .col.col-12.col-xs-12.form-group
+                        label.form-label Access token
+                        input(type="text" ng-model="$ctrl.form.values.access_token").form-control
+
+        .modal-footer.text-center
+            button.button.button-primary(type="submit") Submit
+            button.button.button-default(type="button" ng-click="$ctrl.close()") Close

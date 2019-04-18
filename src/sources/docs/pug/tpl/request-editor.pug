@@ -1,0 +1,14 @@
+.tabs
+    .tabs-headers
+        .tabs-header(
+            ng-repeat="(key, header) in tabs.list" 
+            ng-class="key == tabs.activeKey ? 'active' : ''"
+            ng-bind="header"
+            ng-click="tabs.activeKey = key")
+    .tabs-container
+        .tabs-pane(ng-if="tabs.activeKey == 0")
+            key-value-editor(collection="headers")
+        .tabs-pane(ng-if="tabs.activeKey == 1")
+            key-value-editor(collection="query")
+        .tabs-pane(ng-if="tabs.activeKey == 2")
+            .form: textarea(ng-model="body.raw").form-control

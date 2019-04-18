@@ -1,0 +1,38 @@
+extends layout/layout
+block content
+    .app-container(ng-controller="BaseController" ng-cloak)
+        .app-navbar
+            .app-header.app-header-no_border
+                .app-logo: img(src='./assets/img/logo.png')
+                //- .app-name(ng-bind="data.info.name")
+            nav-bar(data="collection.items()")
+            nav-bar-footer
+        .app-content
+            .content-wrapper(ng-if="collection")
+                .app-header
+                    .app-header-col
+                        .app-name API content
+                    .app-header-col.text-right
+                        .button.button-default(ng-click="setToken()")
+                            em.mdi.mdi-security
+                            | Set token
+                        .button.button-default(ng-click="setApiUrl()")
+                            em.mdi.mdi-shield-link-variant-outline
+                            | Change apiUrl
+                        .button.button-primary(ng-click="importCode()")
+                            em.mdi.mdi-upload
+                            | Import
+                div(btf-markdown="collection.info.description").endpoint-description
+                endpoint-item(ng-repeat="endpoint in endpoints" endpoint="endpoint")
+
+            div(ng-if="!collection").block.block-no_collection: .no_collection-pane
+                .no_collection-icon: em.mdi.mdi-alert-outline
+                .no_collection-title No collection was found.
+                .no_collection-description 
+                    | Please import your collection. 
+                    br
+                    | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum laborum ipsum aut dolor. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                .no_collection-actions
+                    .button.button-primary(ng-click="importCode()")
+                        em.mdi.mdi-upload
+                        | Import

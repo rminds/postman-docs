@@ -1,0 +1,8 @@
+.kv-editor.form
+    .kv-editor-row(ng-repeat="(key, item) in collection")
+        .kv-editor-input: input.form-control(type="text" ng-model="item.key")
+        .kv-editor-input: input.form-control(type="text" ng-model="item.value")
+        .kv-editor-button: .button.button-warning(ng-click="deleteField(key)") DELETE
+    .kv-editor-actions
+        .button.button-primary(
+            ng-click="addField()") ADD FIELD

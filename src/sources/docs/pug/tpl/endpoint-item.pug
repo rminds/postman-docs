@@ -1,0 +1,97 @@
+.endpoint-item(id="{{endpoint.uid}}")
+    .endpoint-name 
+        div(
+            ng-if="endpoint.request.method" 
+            ng-bind="endpoint.request.method" 
+            ng-class="'method-' + method_lc").method
+        span(
+            ng-bind="endpoint.name")
+    
+    div(ng-if="!editor.data").endpoint-content
+        div(btf-markdown="endpoint.description").endpoint-description
+
+        div(ng-if="endpoint.request").endpoint-request
+
+            .endpoint-request-title Endpoint
+
+            div(
+                ng-bind="endpoint.request.url.raw"
+                ).endpoint-url
+            
+            div.endpoint-actions 
+                div(
+                    ng-click="editor.edit()"
+                    ).button.button-primary 
+                    em.mdi.mdi-code-tags
+                    | Call resource
+            
+            div(
+                btf-markdown="endpoint.request.description"
+                ).endpoint-description
+
+            // Headers
+            div(ng-if="endpoint.request.header.length > 0").endpoint-table
+                .endpoint-request-title Headers
+                table-data(rows="endpoint.request.header")
+            
+            // Query
+            div(ng-if="endpoint.request.url.query.length > 0").endpoint-table
+                .endpoint-request-title Query
+                table-data(rows="endpoint.request.url.query")
+
+            // Request body
+            div(ng-if="endpoint.request.body.mode").endpoint-table
+                .endpoint-request-title Body - {{ endpoint.request.body.mode }}
+                div(ng-if="endpoint.request.body.mode == 'raw'" code-dir data="endpoint.request.body.raw")
+                div(ng-if="endpoint.request.body.mode == 'formdata' || endpoint.request.body.mode == 'urlencoded'")
+                    table-data(rows="endpoint.request.body[endpoint.request.body.mode]")
+            
+            // Examples
+            div(ng-if="endpoint.response.length > 0").endpoint-block
+                div.endpoint-actions 
+                    div(
+                        ng-click="examples.show = !examples.show"
+                        ).button.button-warning 
+                        em.mdi.mdi-playlist-check
+                        | Example requests
+
+                // Examples tabs
+                .endpoint-block(ng-if="examples.show")
+                    .endpoint-request-title Example requests
+                    example-responses(
+                        responses="endpoint.response")
+
+    div(ng-if="editor.data").endpoint-content
+        div(btf-markdown="editor.description").endpoint-description
+
+        div(ng-if="endpoint.request").endpoint-request
+
+            .endpoint-request-title Endpoint
+
+            input(
+                type="text"
+                ng-model="endpoint.request.url.raw"
+                ).endpoint-url
+            
+            div.endpoint-actions 
+                div(
+                    ng-click="editor.clear()"
+                    ).button.button-primary 
+                    em.mdi.mdi-code-tags
+                    | Back to details
+                div(
+                    ng-click="editor.send()"
+                    ).button.button-warning 
+                    em.mdi.mdi-code-tags
+                    | Call
+
+            request-editor(
+                headers="editor.data.request.header"
+                body="editor.data.request.body"
+                query="editor.data.request.url.query"
+            )
+
+            p(ng-if="editor.response")
+                | Response code: 
+                strong {{ editor.response.status }} {{ editor.response.statusText }}
+            div(ng-if="editor.response" code-dir data="editor.response.data")
