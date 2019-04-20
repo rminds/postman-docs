@@ -31,13 +31,14 @@ let EndpointItemDirective = function($scope, $interpolate, ApiRequest) {
                 JSON.parse(JSON.stringify($scope.$root.variables)),
                 parseKeyValue(this.data.request.url.query)
             ));
-            
+
             let body = {};
-            
-            if (this.data.request.body && typeof(this.data.request.body.raw) == 'string') {
+
+            if ((method != 'GET') && this.data.request.body &&
+                typeof(this.data.request.body.raw) == 'string') {
                 body = JSON.parse(this.data.request.body.raw);
             }
-            
+
             ApiRequest.ajax(
                 method,
                 url,

@@ -40,6 +40,10 @@ let CollectionObject = function(collection) {
         return variables;
     };
 
+    this.description = function() {
+        return this.collection.info.description;
+    };
+
     this.items = () => {
         return this.collection.item || [];
     }

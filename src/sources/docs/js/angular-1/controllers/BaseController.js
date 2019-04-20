@@ -7,6 +7,7 @@ let BaseController = function(
 ) {
     $scope.collection = null;
     $scope.defaultCollection = true;
+    $scope.description = true;
 
     $scope.initCollection = () => {
         if (CollectionService.has()) {
@@ -18,9 +19,9 @@ let BaseController = function(
         }
 
         if ($scope.collection != null) {
-            console.log($scope.collection);
             $rootScope.variables = $scope.collection.variables();
             $scope.endpoints = $scope.collection.endpointsMap();
+            $scope.description = $scope.collection.description();
 
             let scope_ = {
                 pm: {

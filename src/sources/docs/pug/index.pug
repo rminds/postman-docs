@@ -22,7 +22,7 @@ block content
                         .button.button-primary(ng-click="importCollection()")
                             em.mdi.mdi-upload
                             | Import
-                div(btf-markdown="collection.info.description").endpoint-description
+                div(btf-markdown="description").endpoint-description
                 endpoint-item(ng-repeat="endpoint in endpoints" endpoint="endpoint")
 
             div(ng-if="!collection").block.block-no_collection: .no_collection-pane

@@ -1,6 +1,6 @@
 {
   "name": "quick-dev-template",
-  "version": "0.2.0",
+  "version": "0.2.2",
   "description": "quick-dev-template",
   "main": "index.js",
   "scripts": {
