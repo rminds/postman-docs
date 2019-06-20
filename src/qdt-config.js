@@ -32,6 +32,18 @@ module.exports = {
             }, {
                 "from": "../../node_modules/angular-markdown-directive/markdown.js",
                 "to": "assets/dist/angular-markdown-directive",
+            }, {
+                "from": "../../node_modules/ace-builds/src-min-noconflict/ace.js",
+                "to": "assets/dist/ace/js",
+            }, {
+                "from": "../../node_modules/ace-builds/src-min-noconflict/worker-json.js",
+                "to": "assets/dist/ace/js",
+            }, {
+                "from": "../../node_modules/ace-builds/src-min-noconflict/mode-json.js",
+                "to": "assets/dist/ace/js",
+            }, {
+                "from": "../../node_modules/ace-builds/src-min-noconflict/theme-monokai.js",
+                "to": "assets/dist/ace/js",
             }],
             // browsersync configurations (ex: ip, port and path)
             "server": false,

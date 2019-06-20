@@ -16,6 +16,10 @@
     margin: 0 auto;
 }
 
+.ace_editor {
+    min-height: 300px;
+}
+
 .text-color-a {
     color: $colorA !important;
 }
@@ -74,7 +78,6 @@
             background: #ffffff;
             cursor: pointer;
             transition: background .4s, color .4s;
-            max-width: 33.333%;
             text-align: center;
 
             &:first-child {

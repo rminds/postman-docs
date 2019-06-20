@@ -4,7 +4,7 @@
             ng-repeat="(key, header) in tabs.list" 
             ng-class="key == tabs.activeKey ? 'active' : ''"
             ng-bind="header"
-            ng-click="tabs.activeKey = key")
+            ng-click="selectTab(key)")
     .tabs-container
         .tabs-pane(ng-if="tabs.activeKey == 0")
             key-value-editor(collection="headers")

@@ -29,24 +29,24 @@
                 btf-markdown="endpoint.request.description"
                 ).endpoint-description
 
-            // Headers
+            //- Headers
             div(ng-if="endpoint.request.header.length > 0").endpoint-table
                 .endpoint-request-title Headers
                 table-data(rows="endpoint.request.header")
             
-            // Query
+            //- Query
             div(ng-if="endpoint.request.url.query.length > 0").endpoint-table
                 .endpoint-request-title Query
                 table-data(rows="endpoint.request.url.query")
 
-            // Request body
+            //- Request body
             div(ng-if="endpoint.request.body.mode").endpoint-table
                 .endpoint-request-title Body - {{ endpoint.request.body.mode }}
                 div(ng-if="endpoint.request.body.mode == 'raw'" code-dir data="endpoint.request.body.raw")
                 div(ng-if="endpoint.request.body.mode == 'formdata' || endpoint.request.body.mode == 'urlencoded'")
                     table-data(rows="endpoint.request.body[endpoint.request.body.mode]")
             
-            // Examples
+            //- Examples
             div(ng-if="endpoint.response.length > 0").endpoint-block
                 div.endpoint-actions 
                     div(
@@ -55,7 +55,7 @@
                         em.mdi.mdi-playlist-check
                         | Example requests
 
-                // Examples tabs
+                //- Examples tabs
                 .endpoint-block(ng-if="examples.show")
                     .endpoint-request-title Example requests
                     example-responses(
@@ -70,7 +70,7 @@
 
             input(
                 type="text"
-                ng-model="endpoint.request.url.raw"
+                ng-model="editor.data.request.url.raw"
                 ).endpoint-url
             
             div.endpoint-actions 
@@ -86,10 +86,10 @@
                     | Call
 
             request-editor(
+                request="editor.data.request"
                 headers="editor.data.request.header"
                 body="editor.data.request.body"
-                query="editor.data.request.url.query"
-            )
+                query="editor.data.request.url.query")
 
             p(ng-if="editor.response")
                 | Response code: 
