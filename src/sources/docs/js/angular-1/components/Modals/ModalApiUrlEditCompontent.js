@@ -27,6 +27,6 @@ module.exports = {
         modalApiUrlEditCompontent
     ],
     templateUrl: () => {
-        return '/assets/tpl/modals/modal-api-url-edit-component.html';
+        return 'assets/tpl/modals/modal-api-url-edit-component.html';
     }
 };
