@@ -3,6 +3,7 @@
 /src/qdt-env.js
 /src/collection.json
 /dist
+/.idea
 
 # Compiled source #
 ###################
