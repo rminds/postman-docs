@@ -28,3 +28,26 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+
+
+@mixin webkit_scrollbar($color: $bc) {
+    &::-webkit-scrollbar {
+        width: 4px;
+        height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #f3f4f5;
+        border: 1px solid transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $color;
+        border-radius: 4px;
+    }
+}
+
+@mixin webkit_scrollbar_gray($color: #9E9FA1) {
+    @include webkit_scrollbar($color);
+}

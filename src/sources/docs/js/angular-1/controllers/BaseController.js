@@ -37,6 +37,10 @@ let BaseController = function(
         }
 
         $scope.data = $scope.collection;
+
+        if (localStorage.hasOwnProperty('apiUrl')) {
+            $rootScope.variables.apiUrl = localStorage.getItem('apiUrl');
+        }
     };
 
     $scope.setApiUrl = () => {

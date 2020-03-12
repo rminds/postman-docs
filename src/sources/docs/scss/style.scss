@@ -10,6 +10,12 @@
 // DEV PAGES
 @import 'includes/dev-pages';
 
+$sidebarWidth: 320px;
+
+body {
+    @include webkit_scrollbar($colorCLight);
+}
+
 .wrapper {
     width: 1360px;
     max-width: 100%;
@@ -45,17 +51,47 @@
 }
 
 .text-mono {
-    font-family: monospace;
+    font-family: $monoFont;
 }
 
 .endpoint-description {
     margin: 0 0 20px;
+
+    pre {
+        font-size: 13px;
+        line-height: 18px;
+    }
     
     code {
         font-weight: 500;
-        font-size: 1em;
-        font-family: monospace;
+        font-size: inherit;
+        font-family: $monoFont;
         color: #586ada;
+    }
+
+    ul {
+        margin-bottom: 20px;
+
+        li {
+            padding-left: 20px;
+            position: relative;
+
+            p {
+                margin-bottom: 10px;
+            }
+
+            &::before {
+                content: '';
+                left: 2px;
+                top: 12px;
+                background: rgba($color: $colorCLight, $alpha: .75);
+                width: 8px;
+                height: 2px;
+                border-radius: 1px;
+                display: block;
+                position: absolute;
+            }
+        }
     }
 }
 
@@ -595,6 +631,7 @@
 .app-container {
     display: flex;
     flex-wrap: nowrap;
+    flex-direction: row;
     width: 1360px;
     max-width: 100%;
     margin: 0 auto;
@@ -629,7 +666,9 @@
 
     .app-navbar {
         @include cf();
-        width: 320px;
+        width: $sidebarWidth;
+        max-width: $sidebarWidth;
+        max-width: $sidebarWidth;
         position: fixed;
         left: 50%;
         transform: translate(-(1360px / 2));
@@ -645,6 +684,7 @@
             flex-grow: 1;
             overflow: auto;
             padding: 0 30px;
+            @include webkit_scrollbar($colorCLight);
         }
 
         .navbar-footer {
@@ -676,13 +716,16 @@
 
     .app-content {
         width: 100%;
-        padding-left: 320px;
+        padding-left: $sidebarWidth;
+        overflow: auto;
 
         .content-wrapper {
             min-height: 100vh;
             padding: 0 30px;
             width: 100%;
+            max-width: 100%;
             background: #ffffff;
+            overflow: auto;
         }
     }
 }
@@ -710,19 +753,25 @@
     
     .navbar-item-link,
     .navbar-item-directory {
-        font: 600 12px/26px $bf;
+        font: 600 12px/18px $bf;
         color: #2f2e43;
         cursor: pointer;
         transition: color .4s;
-        @include ellipsis();
+        display: flex;
+        flex-direction: row;
+        padding: 5px 0;
+        white-space: nowrap;
 
         .mdi {
             color: #6f747e;
             font-size: 1.4em;
             margin-right: 5px;
-            float: left;
             transition: color .4s;
 
+        }
+
+        span {
+            display: flex;
         }
 
         &:hover,
@@ -741,17 +790,17 @@
         margin-left: -20px;
 
         .navbar-item-method {
-            font: 700 10px/14px $bf;
+            font: 700 10px/15px $bf;
             color: #fff;
             margin-right: 5px;
             display: block;
             text-align: right;
             position: absolute;
-            padding: 0 2px;
+            padding: 0 3px;
             border-radius: 3px;
             right: calc(100% - 60px);
-            top: 50%;
-            transform: translate(0, -50%);
+            top: 6px;
+            // transform: translate(0, -50%);
 
             &.navbar-item-method-get {
                 background-color: #32bbb9;
@@ -785,7 +834,7 @@
         padding: 10px 0;
         border-bottom: 1px solid #ececec;
         font: 600 18px/20px $bf;
-        margin: 0 0 10px;
+        margin: 0 0 15px;
 
         span {
             color: inherit;
@@ -846,11 +895,17 @@
         border: 1px solid #cbd6e2;
         color: #6f747e;
         cursor: default;
-        font-family: monospace;
+        font-family: $monoFont;
         margin: 0 0 20px;
         width: 100%;
         display: block;
         font: 400 14px $bf;
+        word-break: break-all;
+    }
+
+    pre {
+        word-break: break-all;
+        white-space: pre-wrap;
     }
 
     input.endpoint-url {

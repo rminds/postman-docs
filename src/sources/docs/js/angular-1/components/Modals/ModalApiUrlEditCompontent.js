@@ -9,6 +9,7 @@ let modalApiUrlEditCompontent = function(
             api_url: $scope.$root.variables.apiUrl || '',
         }, (form) => {
             $scope.$root.variables.apiUrl = form.values.api_url;
+            localStorage.setItem('apiUrl', form.values.api_url);
             $ctrl.modal.close();
         });
     };
