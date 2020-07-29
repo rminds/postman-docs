@@ -41,7 +41,7 @@
     "@mdi/font": "^3.6.95",
     "angular": "^1.7.8",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.4.0",
+    "jquery": "^3.5.0",
     "underscore": "^1.9.1",
     "underscore.string": "^3.3.5",
     "angular-markdown-directive": "^0.3.1",
