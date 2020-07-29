@@ -27,6 +27,6 @@ module.exports = {
         ModalApiTokenEditCompontent
     ],
     templateUrl: () => {
-        return '/assets/tpl/modals/modal-api-token-edit-component.html';
+        return 'assets/tpl/modals/modal-api-token-edit-component.html';
     }
 };
