@@ -130,3 +130,23 @@ code,
     &.grey { background-color: #6F747E; }
     &.green { background-color: #32BBB9; }
 }
+
+.image {
+    &.image-default {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 100%;
+        width: fit-content;
+        border-radius: 4px;
+        border: 1px solid rgb(223, 228, 236);
+        background-color: rgb(248, 249, 251);
+        padding: 20px;
+
+        img {
+            max-width: 100%;
+            width: auto;
+        }
+    }
+}
+  
