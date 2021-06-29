@@ -46,17 +46,12 @@ module.exports = {
                 // tasks details, ex: source, destination, minify and etc. 
                 "settings": {
                     "js": [{
-                        "src": [
-                            "app.js"
-                        ],
-                        "watch": [
-                            "angular-1/**/**.js",
-                            "angular-1/**/**.json",
-                        ],
+                        "src": "app.js",
+                        "watch": "**/*.js",
                         "dest": "/",
                         "name": "app.js",
                         "minify": false,
-                        "sourcemap": true,
+                        "sourcemap": false,
                         "browserify": true
                     }, {
                         "src": [
@@ -64,13 +59,17 @@ module.exports = {
                         ],
                         "dest": "/raw",
                         "path": "/raw",
-                        "minify": true,
+                        "minify": false,
                         "sourcemap": false,
                         "browserify": false
                     }],
                     "scss": [{
                         "src": "style.scss",
-                        "watch": "includes/**/*.scss",
+                        "watch": [
+                            "includes/**/*.scss",
+                            "elements/**/*.scss",
+                            "blocks/**/*.scss",
+                        ],
                         "path": "/",
                         "name": "style.min.css",
                         "minify": true

@@ -28,3 +28,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+
+@mixin trans {
+    transition: all .3s ease;
+}

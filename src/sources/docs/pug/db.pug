@@ -1,0 +1,21 @@
+extends layout/layout2
+
+block content
+    .block.block-dashboard: .center-wrapper: .grid-container.grid-default 
+        .grid-navbar.w320.dashboard-navbar.navbar-overlay   
+            .logo: a(href="#"): img(src="assets/img/logo.png", alt="") 
+
+            +accordion_navbar
+
+            a.link.link-logout(href="#")
+                img(src="assets/img/logout-icon.png", alt="")
+                span Logout  
+
+        .grid-content.dashboard-content
+            #tab1.tab-content.active: h2 Tab #1
+
+            #tab2.tab-content: h2 Tab #2
+
+            #tab3.tab-content: h2 Tab #3
+
+            #tab4.tab-content: h2 Tab #4

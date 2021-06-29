@@ -1,0 +1,90 @@
+.tabs {
+    &.tabs-navbar {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 100%;
+
+        & > * {
+            margin-bottom: 10px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .tab-link {
+            display: inline-flex;
+            align-items: center;
+            position: relative;
+            width: 100%;
+            color: #2f2e43;
+            font: 500 12px $bf;
+            padding: 5px 5px 5px 60px;
+            cursor: pointer;
+            @include trans;
+
+            &.active {
+                svg {
+                    opacity: 1;
+                    @include trans;
+                }
+            }
+
+            & > * {
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            span {
+                flex: 1 1;
+                color: inherit;
+                font: inherit;
+            }
+
+            svg {
+                max-width: 16px;
+                max-height: 16px;
+                opacity: 0;
+                @include trans;
+
+                path {
+                    stroke: #9FA4B3;
+                }
+            }
+
+            .label {
+                display: block;
+                position: absolute;
+                top: 6px;
+                right: calc(100% - 60px);
+                border-radius: 3px;
+                color: #fff;
+                font: 700 10px $bf;
+                text-align: right;
+                padding: 2px 3px;
+                margin-right: 5px;
+
+                &.red { background-color: #EF3354; }
+                &.orange { background-color: #FFA64F; }
+                &.grey { background-color: #6F747E; }
+                &.green { background-color: #32BBB9; }
+            }
+
+            &:hover {
+                color: #150ae9;
+                @include trans;
+            }
+        }
+    }
+}
+
+.tab-content {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
