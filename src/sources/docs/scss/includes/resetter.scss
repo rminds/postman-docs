@@ -13,55 +13,41 @@ html, body {
 
 h1, h2, h3, h4, h5, h6, p, span, b, i, li, td{
     font-family: $bf;
-    font-weight: 300;
-    color: inherit;
-    margin: 0;
-    color: $tc;
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: #2f2e43;
-    font-weight: 500;
-    line-height: 1em;
+    font-weight: 600;
+
+    a, span, strong, b {
+        color: inherit;
+        font: inherit;
+    }
+
+    strong { font-weight: 600; }
+
+    b { font-weight: 700; }
 }
 
-h1 {
-    font-size: 38px;
-    margin-bottom: 24px;
-}
+h1 { font-size: 48px; }
 
-h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-}
+h2 { font-size: 36px; }
 
-h3 {
-    font-size: 24px;
-    margin-bottom: 16px;
-}
+h3 { font-size: 28px; }
 
-h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
+h4 { font-size: 24px; }
 
-h5 {
-    font-size: 15px;
-    margin-bottom: 8px;
-}
+h5 { font-size: 20px; }
 
-h6 {
-    font-size: 10px;
-    margin-bottom: 6px;
-}
+h6 { font-size: 18px; }
 
-ul {
+ul, ol {
+    padding-left: 16px;
     margin: 0;
-    padding: 0;
-    list-style: none;
 
     li {
-        font: 300 16px/28px $bf;
+        color: #45535e;
+        font: 400 13px/22px $bf;
     }
 }
 
@@ -79,25 +65,29 @@ pre {
     }
 }
 
-p, b {
+p, b, strong, span {
+    color: #45535e;
     font: 400 13px/22px $bf;
-    margin: 0 0 20px;
 
     a {
-        font: inherit;
         color: inherit;
+        font: inherit;
     }
 }
 
 a {
-    text-decoration: none;
-    font: 300 14px/26px $bf;
-    color: #222; 
+    color: #45535e;
+    font: 400 13px/22px $bf;
+    text-decoration: underline;
+
+    &:hover {
+        text-decoration: none;
+    }
 }
 
-b, strong {
-    font-weight: 600;
-}
+b { font-weight: 700; }
+
+strong { font-weight: 600; }
 
 hr {
     margin-top: 0;

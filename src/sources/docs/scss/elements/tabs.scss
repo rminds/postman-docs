@@ -56,21 +56,10 @@
             }
 
             .label {
-                display: block;
                 position: absolute;
                 top: 6px;
                 right: calc(100% - 60px);
-                border-radius: 3px;
-                color: #fff;
-                font: 700 10px $bf;
-                text-align: right;
-                padding: 2px 3px;
                 margin-right: 5px;
-
-                &.red { background-color: #EF3354; }
-                &.orange { background-color: #FFA64F; }
-                &.grey { background-color: #6F747E; }
-                &.green { background-color: #32BBB9; }
             }
 
             &:hover {

@@ -12,3 +12,121 @@
         z-index: -1;
     }
 }
+
+pre {
+    padding: 0;
+    margin: 0;
+}
+
+code,
+.code {
+    padding: 10px !important;
+
+    &.black { 
+        background-color: #000000; 
+
+        & > * {
+            color: #ffffff !important;
+        }
+
+        .hljs-tag,
+        .hljs-name,
+        .hljs-attr,
+        .hljs-string,
+        .hljs-selector-tag,
+        .hljs-attribute {
+            color: #ffffff !important;
+        }
+    }
+
+    &.blue { 
+        background-color: #202531;
+
+        & > * {
+            color: #ffffff !important;
+        }
+
+        .hljs-tag,
+        .hljs-name,
+        .hljs-attr,
+        .hljs-string,
+        .hljs-selector-tag,
+        .hljs-attribute {
+            color: #ffffff !important;
+        }
+    }
+
+    &.grey { 
+        background-color: #F7F8F9; 
+
+        & > * {
+            color: #45535e !important;
+        }
+
+        .hljs-tag,
+        .hljs-name,
+        .hljs-attr,
+        .hljs-string,
+        .hljs-selector-tag,
+        .hljs-attribute {
+            color: #45535e !important;
+        }
+    }
+
+    .hljs-tag,
+    .hljs-name,
+    .hljs-attr,
+    .hljs-string,
+    .hljs-selector-tag,
+    .hljs-attribute {
+        font: 300 13px/22px $bf;
+    }
+}
+
+.hljs {
+    white-space: normal;
+}
+
+.endpoint-name {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    flex: 1 1 100%;
+    color: #586ada;
+    font: 600 18px/20px $bf;
+
+    & > * {
+        margin-right: 10px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    span {
+        color: inherit;
+        font: inherit;
+    }
+
+    &:before {
+        content: '#';
+        color: #2f2e43;
+        font: inherit;
+        float: left;
+        margin-right: 5px;
+    }
+}
+
+.label {
+    display: inline-flex;
+    border-radius: 3px;
+    color: #fff;
+    font: 700 10px $bf;
+    text-align: right;
+    padding: 2px 3px;
+
+    &.red { background-color: #EF3354; }
+    &.orange { background-color: #FFA64F; }
+    &.grey { background-color: #6F747E; }
+    &.green { background-color: #32BBB9; }
+}

@@ -1,7 +1,7 @@
 extends layout/layout2
 
 block content
-    .block.block-dashboard: .center-wrapper: .grid-container.grid-default 
+    .block.block-dashboard: .center-wrapper: .grid-container.grid-default.align-stretch
         .grid-navbar.w320.dashboard-navbar.navbar-overlay   
             .logo: a(href="#"): img(src="assets/img/logo.png", alt="") 
 
@@ -12,10 +12,347 @@ block content
                 span Logout  
 
         .grid-content.dashboard-content
-            #tab1.tab-content.active: h2 Tab #1
+            #tab1.tab-content.active: .dashboard-wrapper
+                h1 
+                    | This is 
+                    b H1 
+                    | heading 
+                
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quae sunt iste velit maxime quasi facere ea repellendus ullam cumque!
 
-            #tab2.tab-content: h2 Tab #2
+                .divider.divider-default.fullwidth
 
-            #tab3.tab-content: h2 Tab #3
+                h2
+                    | This is 
+                    b H2 
+                    | heading
 
-            #tab4.tab-content: h2 Tab #4
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi architecto ad magni dignissimos nesciunt magnam cupiditate adipisci nobis voluptates illum!
+
+                .divider.divider-default.fullwidth
+
+                h3 
+                    | This is 
+                    b H3 
+                    | heading 
+
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi architecto ad magni dignissimos nesciunt magnam cupiditate adipisci nobis voluptates illum!
+
+                .divider.divider-default.fullwidth
+
+                h4 
+                    | This is 
+                    b H4 
+                    | heading 
+
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi architecto ad magni dignissimos nesciunt magnam cupiditate adipisci nobis voluptates illum!
+
+                .divider.divider-default.fullwidth
+
+                h5 
+                    | This is 
+                    b H5 
+                    | heading 
+
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi architecto ad magni dignissimos nesciunt magnam cupiditate adipisci nobis voluptates illum!
+
+                .divider.divider-default.fullwidth
+
+                h6 
+                    | This is 
+                    b H6 
+                    | heading
+
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi architecto ad magni dignissimos nesciunt magnam cupiditate adipisci nobis voluptates illum!
+
+                .divider.divider-default.fullwidth
+
+                p 
+                    | There is a 
+                    strong strong
+                    | , 
+                    b bold
+                    | , 
+                    a(href="#") link 
+                    | elements in text. 
+
+                .divider.divider-default.fullwidth
+
+                .endpoint-name 
+                    .label.grey Patch 
+                    span records-update-validate
+
+                p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro repellat facere voluptate sequi optio inventore laboriosam? Minus, itaque ratione.
+
+                .divider.divider-default.fullwidth
+
+                h5 Styled lists
+
+                p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum porro repellat facere voluptate sequi optio inventore laboriosam? Minus, itaque ratione.
+
+                h6: strong ul 
+
+                ul 
+                    li Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    li Modi a dolorem autem hic in? Distinctio odio, fugit natus praesentium nostrum dignissimos 
+                    li laudantium eum eligendi, at odit corporis suscipit, minima consequuntur aspernatur porro? 
+                    li Animi officia dignissimos qui facere nam eaque molestiae.
+
+                h6: strong ol 
+
+                ol 
+                    li Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    li Modi a dolorem autem hic in? Distinctio odio, fugit natus praesentium nostrum dignissimos 
+                    li laudantium eum eligendi, at odit corporis suscipit, minima consequuntur aspernatur porro? 
+                    li Animi officia dignissimos qui facere nam eaque molestiae.
+                    
+                .divider.divider-default.fullwidth
+
+            #tab2.tab-content: .dashboard-wrapper
+                h6 Code window 
+
+                p Black code window example
+
+                pre: code.code.blue.html.hljs.xml
+                    span.hljs-tag <!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In  -->
+
+                    span.hljs-tag 
+                        | <
+                        span.hljs-name svg 
+                        span.hljs-attr  version
+                        | =
+                        span.hljs-string "1.1" 
+                        span.hljs-attr  xmlns
+                        | =
+                        span.hljs-string "http://www.w3.org/2000/svg" 
+                        span.hljs-attr  xmlns:xlink
+                        | =
+                        span.hljs-string "http://www.w3.org/1999/xlink" 
+                        span.hljs-attr  x
+                        | =
+                        span.hljs-string "0px" 
+                        span.hljs-attr  y
+                        | =
+                        span.hljs-string "0px" 
+                        span.hljs-attr  width
+                        | =
+                        span.hljs-string "48px"
+                        span.hljs-attr  height
+                        | =
+                        span.hljs-string "48px" 
+                        span.hljs-attr  viewBox
+                        | =
+                        span.hljs-string "0 0 48 48" 
+                        span.hljs-attr  style
+                        | =
+                        span.hljs-string "enable-background:new 0 0 48 48;" 
+                        span.hljs-attr  xml:space
+                        | =
+                        span.hljs-string "preserve" 
+                        | >
+
+                    br
+
+                    span.hljs-tag 
+                        | <
+                        span.hljs-name style 
+                        span.hljs-attr type
+                        | =
+                        span.hljs-string "text/css"
+                        | >
+
+                    span.css 
+                        span.hljs-selector-tag .st0
+                        | {
+                        span.hljs-attribute fill
+                        | :none; }
+
+                    span.hljs-tag 
+                        | <
+                        | /
+                        span.hljs-name style
+                        | >
+
+                    br
+                    
+                    span.hljs-tag
+                        | <
+                        span.hljs-name defs
+                        | >
+
+                    span.hljs-tag
+                        | <
+                        | /
+                        span.hljs-name defs
+                        | >
+
+                    br
+
+                    span.hljs-tag
+                        | <
+                        span.hljs-name path 
+                        span.hljs-attr d
+                        | =
+                        span.hljs-string "M44,19.5l-14.4-1.2L24,5l-5.6,13.3L4,19.5l10.9,9.5L11.6,43L24,35.5L36.4,43l-3.3-14.1L44,19.5z M24,31.8V13.2l3.4,8.1l8.8,0.8l-6.6,5.8l2,8.6L24,31.8z"
+                        | /
+                        | >
+
+                    br
+
+                    span.hljs-tag
+                        | <
+                        span.hljs-name path 
+                        span.hljs-attr class
+                        | =
+                        span.hljs-string "st0" 
+                        span.hljs-attr d
+                        | =
+                        span.hljs-string "M0,0h48v48H0V0z"
+                        | /
+                        | >
+
+                    br
+
+                    span.hljs-tag
+                        | <
+                        | /
+                        span.hljs-name svg
+                        | >
+
+                .divider.divider-default.fullwidth
+
+                p White code window example
+
+                pre: code.code.grey.html.hljs.xml
+                    span.hljs-tag <!-- Generator: Adobe Illustrator 23.0.1, SVG Export Plug-In  -->
+
+                    span.hljs-tag 
+                        | <
+                        span.hljs-name svg 
+                        span.hljs-attr  version
+                        | =
+                        span.hljs-string "1.1" 
+                        span.hljs-attr  xmlns
+                        | =
+                        span.hljs-string "http://www.w3.org/2000/svg" 
+                        span.hljs-attr  xmlns:xlink
+                        | =
+                        span.hljs-string "http://www.w3.org/1999/xlink" 
+                        span.hljs-attr  x
+                        | =
+                        span.hljs-string "0px" 
+                        span.hljs-attr  y
+                        | =
+                        span.hljs-string "0px" 
+                        span.hljs-attr  width
+                        | =
+                        span.hljs-string "48px"
+                        span.hljs-attr  height
+                        | =
+                        span.hljs-string "48px" 
+                        span.hljs-attr  viewBox
+                        | =
+                        span.hljs-string "0 0 48 48" 
+                        span.hljs-attr  style
+                        | =
+                        span.hljs-string "enable-background:new 0 0 48 48;" 
+                        span.hljs-attr  xml:space
+                        | =
+                        span.hljs-string "preserve" 
+                        | >
+
+                    br
+
+                    span.hljs-tag 
+                        | <
+                        span.hljs-name style 
+                        span.hljs-attr type
+                        | =
+                        span.hljs-string "text/css"
+                        | >
+
+                    span.css 
+                        span.hljs-selector-tag .st0
+                        | {
+                        span.hljs-attribute fill
+                        | :none; }
+
+                    span.hljs-tag 
+                        | <
+                        | /
+                        span.hljs-name style
+                        | >
+
+                    br
+                    
+                    span.hljs-tag
+                        | <
+                        span.hljs-name defs
+                        | >
+
+                    span.hljs-tag
+                        | <
+                        | /
+                        span.hljs-name defs
+                        | >
+
+                    br
+
+                    span.hljs-tag
+                        | <
+                        span.hljs-name path 
+                        span.hljs-attr d
+                        | =
+                        span.hljs-string "M44,19.5l-14.4-1.2L24,5l-5.6,13.3L4,19.5l10.9,9.5L11.6,43L24,35.5L36.4,43l-3.3-14.1L44,19.5z M24,31.8V13.2l3.4,8.1l8.8,0.8l-6.6,5.8l2,8.6L24,31.8z"
+                        | /
+                        | >
+
+                    br
+
+                    span.hljs-tag
+                        | <
+                        span.hljs-name path 
+                        span.hljs-attr class
+                        | =
+                        span.hljs-string "st0" 
+                        span.hljs-attr d
+                        | =
+                        span.hljs-string "M0,0h48v48H0V0z"
+                        | /
+                        | >
+
+                    br
+
+                    span.hljs-tag
+                        | <
+                        | /
+                        span.hljs-name svg
+                        | >
+
+                .divider.divider-default.fullwidth
+
+            #tab3.tab-content: .dashboard-wrapper
+                h6 Table ver. 1
+
+                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, quaerat. Harum aliquam distinctio excepturi non dolorem esse atque ipsa expedita?
+
+                .table-container: table.table.table-default 
+                    thead: tr 
+                        th KEY
+                        th Value
+                        th Description
+
+                    tbody 
+                        tr
+                            td Accept
+                            td: a(href="#") application/json
+                            td None
+
+                        tr 
+                            td Content-Type	
+                            td: a(href="#") application/x-www-form-urlencoded
+                            td None
+
+                .divider.divider-default.fullwidth
+
+            #tab4.tab-content: .dashboard-wrapper

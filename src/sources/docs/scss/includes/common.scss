@@ -6,10 +6,28 @@
 .text-left { text-align: left; }
 
 .text-strike { text-decoration: line-through; }
-.text-muted { color: #a1a1a1 !important; }
+.text-muted { color: #a1a1a1; }
+
+.text-trans { text-transform: uppercase; }
+
+.justify-left, .justify-up, .justify-top, .justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-right, .justify-down, .justify-bottom, .justify-end { justify-content: flex-end; }
+
+.align-top, .align-up, .align-left { align-items: flex-start; }
+.align-center { align-items: center; }
+.align-bottom, .align-down, .align-right { align-items: flex-end; }
+.align-stretch { align-items: stretch; }
+
+.flex-wrap { flex-wrap: wrap; } 
 
 .hidden { display: none; }
+.overflow { overflow: hidden}
 
+.bold { font-weight: 700; }
+.strong { font-weight: 600; }
+
+.grow { flex-grow: 1; }
 
 .cf { @include cf(); }
 

@@ -1,0 +1,13 @@
+hr,
+.divider {
+    display: block;
+    max-width: 1280px;
+    width: 100%;
+    height: 1px;
+    margin-left: auto;
+    margin-right: auto;
+
+    &.fullwidth { max-width: 100%; }
+    &.divider-default { background-color: #DFE4EC; }
+    &.divider-black { background-color: #000000; }
+}
