@@ -4,26 +4,21 @@
         flex-direction: column;
         flex: 1 1 100%;
 
-        & > * {
-            margin-bottom: 10px;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
-        }
-
         .tab-link {
             display: inline-flex;
             align-items: center;
             position: relative;
             width: 100%;
             color: #2f2e43;
-            font: 500 12px $bf;
+            font: 600 12px $bf;
             padding: 5px 5px 5px 60px;
             cursor: pointer;
             @include trans;
 
             &.active {
+                color: $blue;
+                @include trans;
+                
                 svg {
                     opacity: 1;
                     @include trans;

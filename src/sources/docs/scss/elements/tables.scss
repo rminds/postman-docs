@@ -58,7 +58,15 @@ table,
                 a {
                     color: $blue;
                     font: inherit;
-                    font-weight: 500;
+                    font-weight: 600;
+                    cursor: pointer;
+                    @include trans;
+
+                    &:hover {
+                        color: $lightblue;
+                        text-decoration: none;
+                        @include trans;
+                    }
                 }
             }
         }

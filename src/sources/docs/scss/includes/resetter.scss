@@ -68,20 +68,19 @@ pre {
 p, b, strong, span {
     color: #45535e;
     font: 400 13px/22px $bf;
-
-    a {
-        color: inherit;
-        font: inherit;
-    }
 }
 
 a {
-    color: #45535e;
-    font: 400 13px/22px $bf;
+    color: $blue;
+    font: 700 13px/22px $bf;
     text-decoration: underline;
+    cursor: pointer;
+    @include trans;
 
     &:hover {
+        color: $lightblue;
         text-decoration: none;
+        @include trans;
     }
 }
 

@@ -1,16 +1,12 @@
 .accordion {
     &.accordion-navbar {
-        & > * {
-            margin-bottom: 20px;
-
-            &:last-child {
-                margin-bottom: 0;
-            }
+        &.inner {
+            margin-left: 10px;
         }
-
+        
         .accordion-item {
             &.active {
-                .accordion-head {
+                & > .accordion-head {
                     .accordion-arrow {
                         svg {
                             transform: rotate(-180deg);
@@ -19,8 +15,12 @@
                     }
 
                     .accordion-link {
-                        img {
-                            filter: grayscale(0);
+                        color: $blue;
+                        @include trans;
+
+                        &:before {
+                            content: '\F76F';
+                            color: $blue;
                             @include trans;
                         }
                     }
@@ -31,6 +31,7 @@
                 display: inline-flex;
                 align-items: center;
                 flex: 1 1 100%;
+                padding: 5px 0;
                 cursor: pointer;
 
                 & > * {
@@ -48,12 +49,14 @@
                     width: fit-content;
 
                     svg {
-                        max-width: 10px;
-                        max-height: 10px;
+                        max-width: 8px;
+                        max-height: 8px;
+                        transform: rotate(-90deg);
                         @include trans;
 
                         path {
-                            stroke: #9FA4B3;
+                            stroke: #2f2e43;
+                            @include trans;
                         }
                     }
                 }
@@ -63,39 +66,46 @@
                     align-items: center;
                     flex: 1 1;
                     color: #2f2e43;
-                    font: 500 12px $bf;
+                    font: 600 12px $bf;
                     cursor: pointer;
                     @include trans;
-
-                    & > * {
-                        margin-right: 10px;
-
-                        &:last-child {
-                            margin-right: 0;
-                        }
-                    }
-
-                    img {
-                        filter: grayscale(100%);
-                        @include trans;
-                    }
 
                     span {
                         color: inherit;
                         font: inherit;
                     }
-                }
-            }
 
-            .accordion-body {
-                padding-top: 20px;
+                    &:before {
+                        display: inline-block;
+                        content: '\F24B';
+                        color: #6f747e;
+                        font: normal normal normal 24px/1 "Material Design Icons";
+                        font-size: 1.4em;
+                        text-rendering: auto;
+                        line-height: inherit;
+                        margin-right: 5px;
+                        @include trans;
+                    }
+                }
+
+                &:hover {
+                    .accordion-link {
+                        color: $lightblue;
+                        @include trans;
+
+                        &:before {
+                            color: $lightblue;
+                            @include trans;
+                        }
+                    }
+                }
             }
         }
     }
 
     .accordion-item {
         &.active {
-            .accordion-body {
+            & > .accordion-body {
                 display: block;
             }
         }

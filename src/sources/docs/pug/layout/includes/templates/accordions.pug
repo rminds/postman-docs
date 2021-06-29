@@ -6,19 +6,31 @@ mixin tabs_navbar
             li.tab-link(data-tab=tab.data)
                 .label(class=tab.color)=tab.label
                 span=tab.name
-                include ../../../../resources/assets/img/icons/arrow-long-right-regular.svg
 
 mixin accordion_navbar
     - var x = 5;
 
     .accordion.accordion-navbar(accordion)
+        .accordion-item 
+            .accordion-head 
+                .accordion-arrow: include ../../../../resources/assets/img/icons/angle-down-regular.svg
+                .accordion-link: span Page name
+            
+            .accordion-body: .accordion.accordion-navbar.inner
+                - for (var i = 0; i < x; i++) {
+                    .accordion-item.inner
+                        .accordion-head.inner
+                            .accordion-arrow: include ../../../../resources/assets/img/icons/angle-down-regular.svg
+                            .accordion-link: span Page name
+                        
+                        .accordion-body: +tabs_navbar
+                - }
+
         - for (var i = 0; i < x; i++) {
             .accordion-item 
                 .accordion-head 
                     .accordion-arrow: include ../../../../resources/assets/img/icons/angle-down-regular.svg
-                    .accordion-link 
-                        img(src="assets/img/folder-icon.png", alt="")
-                        span Page name
+                    .accordion-link: span Page name
                 
                 .accordion-body: +tabs_navbar
         - }
